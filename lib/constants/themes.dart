@@ -16,4 +16,26 @@ class MyTextStyle {
     fontSize: 12,
     color: Colors.grey.shade200,
   );
+
+  static const titleStyle = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+  );
+
+  static const seeAllButtonStyle = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    color: bannerColor,
+  );
+
+  static const productTitleStyle = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+    overflow: TextOverflow.ellipsis,
+  );
+
+  static const producDescriptiontyle = TextStyle(
+    fontSize: 14,
+    overflow: TextOverflow.ellipsis,
+  );
 }

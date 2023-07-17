@@ -1,0 +1,64 @@
+{
+  "products": [
+    {
+      "productId": 1,
+      "title": "Airpods",
+      "shortDescription": "Product Airpods desc short",
+      "description": "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+      "rating": 6.7,
+      "review": 34,
+      "imgUrl": "assets/images/product1.png",
+      "price": 300
+    },
+    {
+      "productId": 2,
+      "title": "MacBook",
+      "shortDescription": "Product MacBook desc short",
+      "description": "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+      "rating": 6.7,
+      "review": 34,
+      "imgUrl": "assets/images/product2.png",
+      "price": 1230
+    },
+    {
+      "productId": 3,
+      "title": "MacBook Pro",
+      "shortDescription": "Product MacBook Pro desc short",
+      "description": "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+      "rating": 6.7,
+      "review": 34,
+      "imgUrl": "assets/images/product3.png",
+      "price": 1405
+    },
+    {
+      "productId": 4,
+      "title": "iPad Pro",
+      "shortDescription": "Product iPad Pro desc short",
+      "description": "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+      "rating": 6.7,
+      "review": 34,
+      "imgUrl": "assets/images/product4.png",
+      "price": 1009
+    },
+    {
+      "productId": 5,
+      "title": "iPhone 14",
+      "shortDescription": "Product iPhone 14 desc short",
+      "description": "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+      "rating": 6.7,
+      "review": 34,
+      "imgUrl": "assets/images/product5.png",
+      "price": 980
+    },
+    {
+      "productId": 6,
+      "title": "Apple Watch",
+      "shortDescription": "Product Apple Watch desc short",
+      "description": "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+      "rating": 6.7,
+      "review": 34,
+      "imgUrl": "assets/images/product6.png",
+      "price": 540
+    }
+  ]
+}
