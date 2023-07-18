@@ -92,4 +92,12 @@ class CartNotifierManager extends StateNotifier<List<NewProductModel>> {
               countInCart: --product.countInCart),
     ];
   }
+
+  String totalPrice() {
+    int total = 0;
+    for (var product in state) {
+      total += product.price * product.countInCart;
+    }
+    return total.toString();
+  }
 }
