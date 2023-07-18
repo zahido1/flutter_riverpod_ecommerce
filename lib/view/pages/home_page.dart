@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod_ecommerce/constants/themes.dart';
-import 'package:flutter_riverpod_ecommerce/model/product_model.dart';
 import 'package:flutter_riverpod_ecommerce/view/widgets/category_chip_widget.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -14,7 +13,6 @@ class HomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    AsyncValue<ProductModel> products = ref.watch(productsProvider);
     final apiProducts = ref.watch(apiProductsProvider);
 
     return Scaffold(
@@ -148,7 +146,7 @@ class HomePage extends ConsumerWidget {
             );
           },
           error: (err, stack) => Text('Error: $err'),
-          loading: () => const CircularProgressIndicator(),
+          loading: () => const Center(child: CircularProgressIndicator()),
         ));
   }
 }

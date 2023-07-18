@@ -1,0 +1,48 @@
+import 'package:flutter_riverpod_ecommerce/model/new_product_model.dart';
+
+final List<NewProductModel> newProducts = [
+  NewProductModel(
+    productId: 1,
+    title: "Beats Qulaqliq",
+    shortDescription: "lorem lorem short 1",
+    description: "lorem lorem long 1",
+    rating: 4.5,
+    review: 12,
+    imgUrl: "assets/images/product1.png",
+    price: 45,
+    categoryId: 1,
+  ),
+  NewProductModel(
+    productId: 2,
+    title: "MacBook",
+    shortDescription: "lorem lorem short 2",
+    description: "lorem lorem long 2",
+    rating: 4.9,
+    review: 122,
+    imgUrl: "assets/images/product2.png",
+    price: 450,
+    categoryId: 1,
+  ),
+  NewProductModel(
+    productId: 3,
+    title: "MacBook Pro",
+    shortDescription: "lorem lorem short 3",
+    description: "lorem lorem long 3",
+    rating: 4.5,
+    review: 65,
+    imgUrl: "assets/images/product3.png",
+    price: 900,
+    categoryId: 2,
+  ),
+  NewProductModel(
+    productId: 4,
+    title: "iPad",
+    shortDescription: "lorem lorem short 4",
+    description: "lorem lorem long 4",
+    rating: 4.6,
+    review: 121,
+    imgUrl: "assets/images/product4.png",
+    price: 45,
+    categoryId: 1,
+  ),
+];

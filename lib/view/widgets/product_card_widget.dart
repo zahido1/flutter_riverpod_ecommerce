@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod_ecommerce/provider/constant/all_providers.dart';
 
 import '../../constants/themes.dart';
 
-class ProductCardWidget extends StatelessWidget {
+class ProductCardWidget extends ConsumerWidget {
+  final int catId;
   const ProductCardWidget({
     super.key,
+    required this.catId,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final cartProducts = ref.watch(cartStateNotifier.notifier);
+    final allProducts = ref.watch(productStateNotifier.notifier);
+    final products = ref
+        .watch(productStateNotifier)
+        .where((element) => element.categoryId == catId)
+        .toList();
     return Container(
       height: 250,
       // color: Colors.amber,
@@ -16,7 +26,7 @@ class ProductCardWidget extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         shrinkWrap: true,
-        itemCount: 5,
+        itemCount: products.length,
         itemBuilder: (context, index) {
           return Container(
             margin: const EdgeInsets.all(8),
@@ -40,7 +50,7 @@ class ProductCardWidget extends StatelessWidget {
                     color: productBgColor,
                     width: double.infinity,
                     padding: const EdgeInsets.all(6),
-                    child: Image.asset("assets/images/product1.png"),
+                    child: Image.asset(products[index].imgUrl),
                   ),
                 ),
                 Padding(
@@ -54,30 +64,51 @@ class ProductCardWidget extends StatelessWidget {
                       const SizedBox(
                         height: 12,
                       ),
-                      const Text(
-                        "Prodcut Name",
+                      Text(
+                        products[index].title,
                         style: MyTextStyle.productTitleStyle,
                       ),
-                      const Text(
-                        "Short Product Descriptionasdaouhsaid",
+                      Text(
+                        products[index].shortDescription,
                         style: MyTextStyle.producDescriptiontyle,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
-                            "\$900",
-                            style: TextStyle(
+                          Text(
+                            "\$ ${products[index].price}",
+                            style: const TextStyle(
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.add_circle,
-                              size: 28,
-                            ),
-                          ),
+                          products[index].isSelected
+                              ? IconButton(
+                                  onPressed: () {
+                                    allProducts.toggleSelected(
+                                      products[index].productId,
+                                    );
+                                    cartProducts.deleteFromCart(
+                                      products[index].productId,
+                                    );
+                                  },
+                                  icon: const Icon(
+                                    Icons.delete,
+                                    size: 28,
+                                  ),
+                                )
+                              : IconButton(
+                                  onPressed: () {
+                                    allProducts.toggleSelected(
+                                        products[index].productId);
+                                    cartProducts.addToCart(
+                                      products[index],
+                                    );
+                                  },
+                                  icon: const Icon(
+                                    Icons.add_circle,
+                                    size: 28,
+                                  ),
+                                ),
                         ],
                       ),
                     ],
